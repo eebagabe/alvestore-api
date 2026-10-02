@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: alvestore-postgres
+    environment:
+      POSTGRES_USER: alvestore
+      POSTGRES_PASSWORD: alvestore
+      POSTGRES_DB: alvestore
+    ports:
+      - "5435:5432"
+    volumes:
+      - alvestore-pgdata:/var/lib/postgresql/data
+  
+volumes:
+  alvestore-pgdata:
